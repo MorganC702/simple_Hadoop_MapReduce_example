@@ -1,14 +1,18 @@
 #!/usr/bin/env python
 import sys
+import re
+import nltk
+from nltk.corpus import stopwords
+
+nltk.data.path.append("/roor.nltk_data")
+stop_words = set(stopwords.words("english"))
 
 # get all lines from stdin
 for line in sys.stdin:
     # remove leading and trailing whitespace
     line = line.strip()
-
-    # split the line into words; splits on any whitespace
-    words = line.split()
-
-    # output tuples (word, 1) in tab-delimited format
+    words = re.findall(r'\w+', line)
     for word in words:
-        print '%s\t%s' % (word, "1")
+        word = word.lower()
+        if word not in stop_words:
+            print(f"{word}\t1")

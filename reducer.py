@@ -25,4 +25,5 @@ for line in sys.stdin:
 # write the tuples to stdout
 # Note: they are unsorted
 for word in word2count.keys():
-    print '%s\t%s'% ( word, word2count[word] )
+    print(f"{word}\t{word2count[word]}")
+
