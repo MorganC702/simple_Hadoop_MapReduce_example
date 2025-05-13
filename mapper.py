@@ -14,5 +14,5 @@ for line in sys.stdin:
     words = re.findall(r'\w+', line)
     for word in words:
         word = word.lower()
-        if word not in stop_words:
+        if word and word not in stop_words and word.isalpha():
             print(f"{word}\t1")
