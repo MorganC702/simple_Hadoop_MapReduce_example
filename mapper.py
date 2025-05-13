@@ -4,7 +4,7 @@ import re
 import nltk
 from nltk.corpus import stopwords
 
-nltk.data.path.append("/roor.nltk_data")
+nltk.data.path.append("/root/simple_Hadoop_MapReduce_example/nltk_data")
 stop_words = set(stopwords.words("english"))
 
 # get all lines from stdin
